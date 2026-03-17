@@ -27,15 +27,41 @@ int main()
         return 0;
     }
 
-    // Se crea el tablero usando memoria dinamica
+    // Se crea el tablero
     int* tablero = crearTablero(alto);
 
-    // Se imprime el tablero en consola
-    imprimirTablero(tablero, ancho, alto);
+    char opcion = ' ';
 
-    // Se libera la memoria
+    //ciclo
+    while(opcion != 'Q' && opcion != 'q')
+    {
+
+        imprimirTablero(tablero, ancho, alto);
+
+        mostrarMenu();
+
+        cin >> opcion;
+
+        if(opcion == 'A' || opcion == 'a')
+        {
+            moverIzquierda();
+        }
+        else if(opcion == 'D' || opcion == 'd')
+        {
+            moverDerecha();
+        }
+        else if(opcion == 'S' || opcion == 's')
+        {
+            bajarPieza();
+        }
+        else if(opcion == 'W' || opcion == 'w')
+        {
+            rotarPieza();
+        }
+    }
+
+    // liberar memoria
     delete[] tablero;
 
     return 0;
-
 }
