@@ -28,7 +28,8 @@ int main()
     }
 
     // Se crea el tablero
-    int* tablero = crearTablero(alto);
+     int* tablero = crearTablero(alto);
+
 
     char opcion = ' ';
 
@@ -65,3 +66,4 @@ int main()
 
     return 0;
 }
+

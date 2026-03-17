@@ -18,6 +18,8 @@ int* crearTablero(int alto);
 // alto -> numero de filas
 void imprimirTablero(int* tablero, int ancho, int alto);
 
+
+// Para mover las piezas
 void moverIzquierda();
 void moverDerecha();
 void bajarPieza();
