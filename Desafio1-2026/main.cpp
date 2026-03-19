@@ -28,7 +28,14 @@ int main()
     }
 
     // Se crea el tablero
-    int* tablero = crearTablero(alto);
+     int* tablero = crearTablero(alto);
+
+    int pieza[4];
+    piezaT(pieza);   // puedes cambiar por piezaI, piezaO, piezaL, etc.
+
+    int filaPieza = 0;
+    int colPieza = 2;
+
 
     char opcion = ' ';
 
@@ -36,28 +43,29 @@ int main()
     while(opcion != 'Q' && opcion != 'q')
     {
 
-        imprimirTablero(tablero, ancho, alto);
+        imprimirTableroConPieza(tablero, ancho, alto, pieza, filaPieza, colPieza);
 
         mostrarMenu();
-
         cin >> opcion;
 
         if(opcion == 'A' || opcion == 'a')
         {
-            moverIzquierda();
+            moverIzquierda(colPieza);
         }
         else if(opcion == 'D' || opcion == 'd')
         {
-            moverDerecha();
+            moverDerecha(colPieza, ancho);
         }
         else if(opcion == 'S' || opcion == 's')
         {
-            bajarPieza();
+            bajarPieza(filaPieza, alto);
         }
         else if(opcion == 'W' || opcion == 'w')
         {
             rotarPieza();
         }
+
+        cout << endl;
     }
 
     // liberar memoria
@@ -65,3 +73,4 @@ int main()
 
     return 0;
 }
+
