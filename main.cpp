@@ -20,51 +20,45 @@ int main()
         return 0;
     }
 
-    // validar multiplo de 8
+    // Se valida que el ancho sea multiplo de 8
     if(ancho % 8 != 0)
     {
         cout << "El ancho debe ser multiplo de 8" << endl;
         return 0;
     }
 
-    // crear tablero
-    int* tablero = crearTablero(alto);
+    // Se crea el tablero
+     int* tablero = crearTablero(alto);
 
-    // crear pieza
-    int pieza[4];
-    piezaT(pieza);   // puedes cambiar por piezaI, piezaO, piezaL, etc.
-
-    int filaPieza = 0;
-    int colPieza = 2;
 
     char opcion = ' ';
 
-    // ciclo del juego
+    //ciclo
     while(opcion != 'Q' && opcion != 'q')
     {
-        imprimirTableroConPieza(tablero, ancho, alto, pieza, filaPieza, colPieza);
+
+        imprimirTablero(tablero, ancho, alto);
 
         mostrarMenu();
+
         cin >> opcion;
 
         if(opcion == 'A' || opcion == 'a')
         {
-            moverIzquierda(colPieza);
+            moverIzquierda();
         }
         else if(opcion == 'D' || opcion == 'd')
         {
-            moverDerecha(colPieza, ancho);
+            moverDerecha();
         }
         else if(opcion == 'S' || opcion == 's')
         {
-            bajarPieza(filaPieza, alto);
+            bajarPieza();
         }
         else if(opcion == 'W' || opcion == 'w')
         {
             rotarPieza();
         }
-
-        cout << endl;
     }
 
     // liberar memoria
@@ -72,3 +66,4 @@ int main()
 
     return 0;
 }
+

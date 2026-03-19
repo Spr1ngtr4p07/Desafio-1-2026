@@ -1,8 +1,5 @@
 #ifndef DESAFIOLIBRERIA_H
 #define DESAFIOLIBRERIA_H
-/*
-Esta libreria sirve para.............
-*/
 
 #include <iostream>
 
@@ -47,6 +44,8 @@ void rotarPieza();
 
 void mostrarMenu();
 
+
+// Funcion para inicializar las 7 piezas de Tetris
 
 #endif // DESAFIOLIBRERIA_H
 
